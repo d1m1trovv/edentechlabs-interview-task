@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        setInitialViewController()
         return true
     }
 
@@ -41,6 +42,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+    func setInitialViewController() {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let tabBarController = TabBarController()
+        let astronomyPictureController = AstronomyPictureController()
+        let earthImageController = EarthImageController()
+        let epicAPIController = EpicAPIImageController()
+        
+        let firstNavController = tabBarController.appendNavigationController(astronomyPictureController,
+                                                                             "First",
+                                                                             image: UIImage(named: "home")!)
+        let secondNavController = tabBarController.appendNavigationController(earthImageController,
+                                                                              "Second",
+                                                                              image: UIImage(named: "home")!)
+        let thirdNavController = tabBarController.appendNavigationController(epicAPIController,
+                                                                             "Third",
+                                                                             image: UIImage(named: "home")!)
+        
+        tabBarController.setViewControllers([firstNavController, secondNavController, thirdNavController], animated: false)
+        
+        self.window?.rootViewController = tabBarController
+        self.window?.makeKeyAndVisible()
+    }
 }
 
