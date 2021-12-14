@@ -77,6 +77,10 @@
 		844813BE2768C824009B0D8A /* edentechlabs-interview-task */ = {
 			isa = PBXGroup;
 			children = (
+				844813E22768D7BD009B0D8A /* New Group */,
+				844813E12768D657009B0D8A /* showImageFromEpicAPI */,
+				844813E02768D646009B0D8A /* showImageFromEarth */,
+				844813DF2768D638009B0D8A /* showAstronomyPicture */,
 				844813BF2768C824009B0D8A /* AppDelegate.swift */,
 				844813C12768C824009B0D8A /* ViewController.swift */,
 				844813C32768C824009B0D8A /* Main.storyboard */,
@@ -94,6 +98,34 @@
 				844813D62768C826009B0D8A /* Info.plist */,
 			);
 			path = "edentechlabs-interview-taskTests";
+			sourceTree = "<group>";
+		};
+		844813DF2768D638009B0D8A /* showAstronomyPicture */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = showAstronomyPicture;
+			sourceTree = "<group>";
+		};
+		844813E02768D646009B0D8A /* showImageFromEarth */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = showImageFromEarth;
+			sourceTree = "<group>";
+		};
+		844813E12768D657009B0D8A /* showImageFromEpicAPI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = showImageFromEpicAPI;
+			sourceTree = "<group>";
+		};
+		844813E22768D7BD009B0D8A /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
