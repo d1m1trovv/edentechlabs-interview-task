@@ -26,6 +26,9 @@
 		84C7CD052769EC6000868B08 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CD042769EC6000868B08 /* Endpoint.swift */; };
 		84C7CD092769EEB900868B08 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CD082769EEB900868B08 /* NetworkError.swift */; };
 		84C7CD0B2769FA7D00868B08 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CD0A2769FA7D00868B08 /* ImageLoader.swift */; };
+		84C7CD0D2769FCBF00868B08 /* AstronomyPicture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CD0C2769FCBF00868B08 /* AstronomyPicture.swift */; };
+		84C7CD102769FD2E00868B08 /* AstronomyPictureAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CD0F2769FD2E00868B08 /* AstronomyPictureAssembler.swift */; };
+		84C7CD13276A1B3400868B08 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CD12276A1B3400868B08 /* TextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +65,9 @@
 		84C7CD042769EC6000868B08 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		84C7CD082769EEB900868B08 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		84C7CD0A2769FA7D00868B08 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		84C7CD0C2769FCBF00868B08 /* AstronomyPicture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPicture.swift; sourceTree = "<group>"; };
+		84C7CD0F2769FD2E00868B08 /* AstronomyPictureAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureAssembler.swift; sourceTree = "<group>"; };
+		84C7CD12276A1B3400868B08 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +196,8 @@
 		84C7CCEE2769E03E00868B08 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				84C7CD11276A1B2300868B08 /* Extension */,
+				84C7CD0E2769FD1300868B08 /* Assembler */,
 				84C7CD072769EEAD00868B08 /* Enum */,
 				84C7CD062769EE9200868B08 /* Service */,
 				84C7CD042769EC6000868B08 /* Endpoint.swift */,
@@ -209,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				84C7CCF82769E0BB00868B08 /* AstronomyPictureResponseResource.swift */,
+				84C7CD0C2769FCBF00868B08 /* AstronomyPicture.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -253,6 +262,22 @@
 				84C7CD082769EEB900868B08 /* NetworkError.swift */,
 			);
 			path = Enum;
+			sourceTree = "<group>";
+		};
+		84C7CD0E2769FD1300868B08 /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				84C7CD0F2769FD2E00868B08 /* AstronomyPictureAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		84C7CD11276A1B2300868B08 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				84C7CD12276A1B3400868B08 /* TextField.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,10 +390,13 @@
 				84C7CCFB2769E0D300868B08 /* AstronomyPictureViewModel.swift in Sources */,
 				844813ED2768DD08009B0D8A /* EarthImageController.swift in Sources */,
 				844813C22768C824009B0D8A /* ViewController.swift in Sources */,
+				84C7CD0D2769FCBF00868B08 /* AstronomyPicture.swift in Sources */,
 				844813EB2768DCD7009B0D8A /* AstronomyPictureController.swift in Sources */,
 				84C7CD0B2769FA7D00868B08 /* ImageLoader.swift in Sources */,
+				84C7CD102769FD2E00868B08 /* AstronomyPictureAssembler.swift in Sources */,
 				84C7CCFF2769E2E000868B08 /* AstronomyPictureCell.swift in Sources */,
 				84C7CCF22769E06200868B08 /* HTTPService.swift in Sources */,
+				84C7CD13276A1B3400868B08 /* TextField.swift in Sources */,
 				844813C02768C824009B0D8A /* AppDelegate.swift in Sources */,
 				84C7CD012769E41E00868B08 /* DatePickerCell.swift in Sources */,
 			);

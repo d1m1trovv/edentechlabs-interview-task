@@ -47,6 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tabBarController = TabBarController()
         let astronomyPictureController = AstronomyPictureController()
+        let astronomyPictureViewModel = AstronomyPictureViewModel()
+        astronomyPictureController.viewModel = astronomyPictureViewModel
         let earthImageController = EarthImageController()
         let epicAPIController = EpicAPIImageController()
         

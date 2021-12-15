@@ -9,20 +9,48 @@
 import Foundation
 import UIKit
 
+protocol DatePickerCellDelegate: AnyObject {
+    func doneButtonIsClicked(_ date: String?)
+}
+
 class DatePickerCell: UITableViewCell {
     static let reuseIdentifier = String(describing: DatePickerCell.self)
     
+    weak var delegate: DatePickerCellDelegate?
+    
     lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .subheadline)
+        label.font = .preferredFont(forTextStyle: .title2)
+        label.text = "Date: "
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    lazy var dateTextField: UITextField = {
-        let textField = UITextField()
+    lazy var dateTextField: TextField = {
+        let textField = TextField()
+        textField.layer.cornerRadius = 7.0
+        textField.layer.borderWidth = 0.5
+        textField.layer.borderColor = UIColor.black.withAlphaComponent(0.5).cgColor
+        textField.layer.masksToBounds = true
         textField.translatesAutoresizingMaskIntoConstraints = false
         return textField
+    }()
+    
+    lazy var toolbar: UIToolbar = {
+        let toolbar = UIToolbar()
+        return toolbar
+    }()
+    
+    lazy var datePicker: UIDatePicker = {
+        let datePicker = UIDatePicker()
+        datePicker.datePickerMode = .date
+        datePicker.minimumDate = Date()
+        return datePicker
+    }()
+    
+    lazy var doneButton: UIBarButtonItem = {
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
+        return doneButton
     }()
     
     lazy var stackView = UIStackView()
@@ -40,11 +68,25 @@ class DatePickerCell: UITableViewCell {
         titleLabel.text = text
     }
     
+    @objc func doneButtonClicked(_ sender: UIBarButtonItem) {
+        dateTextField.resignFirstResponder()
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .none
+        
+        dateTextField.text = dateFormatter.string(from: datePicker.date)
+        delegate?.doneButtonIsClicked(dateTextField.text)
+    }
+    
     private func configureView() {
+        configureDatePicker()
+        
         contentView.layoutMargins = UIEdgeInsets(top: 8.0, left: 16.0, bottom: 8.0, right: 16.0)
         
         stackView = UIStackView(arrangedSubviews: [titleLabel, dateTextField])
         stackView.axis = .vertical
+        stackView.spacing = 3.0
         stackView.translatesAutoresizingMaskIntoConstraints = false
         
         contentView.addSubview(stackView)
@@ -56,6 +98,22 @@ class DatePickerCell: UITableViewCell {
             stackView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),
             stackView.bottomAnchor.constraint(equalTo: guide.bottomAnchor)
-            ])
+        ])
+    }
+    
+    private func configureDatePicker() {
+        doneButton.action = #selector(doneButtonClicked(_:))
+        
+        toolbar.sizeToFit()
+        toolbar.setItems([doneButton], animated: true)
+        
+        dateTextField.inputAccessoryView = toolbar
+        dateTextField.inputView = datePicker
+    }
+}
+
+extension DatePickerCell: AstronomyPictureControllerDelegate {
+    func setDateTextFieldText(_ text: String?) {
+        dateTextField.text = text
     }
 }

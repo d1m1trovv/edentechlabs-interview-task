@@ -7,3 +7,33 @@
 //
 
 import Foundation
+
+protocol AstronomyPictureServiceProtocol: AnyObject {
+    func getAstronomyPicture(date: Date,
+                             completion: @escaping (AstronomyPicture?, NetworkError?) -> Void)
+}
+
+class AstronomyPictureService: AstronomyPictureServiceProtocol {
+    private let httpService: HTTPServiceProtocol
+    private let astronomyPictureAssembler: AstronomyPictureAssemblerProtocol
+    
+    init(httpService: HTTPServiceProtocol = HTTPService(),
+         astronomyPictureAssembler: AstronomyPictureAssemblerProtocol = AstronomyPictureAssembler()) {
+        self.httpService = httpService
+        self.astronomyPictureAssembler = astronomyPictureAssembler
+    }
+    
+    func getAstronomyPicture(date: Date,
+                             completion: @escaping (AstronomyPicture?, NetworkError?) -> Void) {
+        httpService.getAstronomyPicture(date: date) { [weak self] result, error in
+            guard let self = self else { return }
+            if let result = result,
+                error == nil {
+                let astronomyPictureModel = self.astronomyPictureAssembler.convertToAstronomyPictureModel(from: result)
+                completion(astronomyPictureModel, nil)
+            } else {
+                completion(nil, error)
+            }
+        }
+    }
+}

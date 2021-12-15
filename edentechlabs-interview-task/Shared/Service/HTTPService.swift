@@ -8,7 +8,20 @@
 
 import Foundation
 
-class HTTPService {
+protocol URLSessionProtocol: AnyObject {
+    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+    
+    func dataTask(with url: URL, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+}
+
+extension URLSession: URLSessionProtocol {}
+
+protocol HTTPServiceProtocol: AnyObject {
+    func getAstronomyPicture(date: Date,
+                             completion: @escaping (AstronomyPictureResponseResource?, NetworkError?) -> Void)
+}
+
+class HTTPService: HTTPServiceProtocol {
     func getAstronomyPicture(date: Date,
                              completion: @escaping (AstronomyPictureResponseResource?, NetworkError?) -> Void) {
         let endpoint = Endpoint.astronomyPicture(apiKey: "he4ZKTcfjgpo2iOvgQpAAb5MoR8r3ZnGtoRHe8ds", date: "", conceptTags: "true")
