@@ -17,6 +17,15 @@
 		844813EB2768DCD7009B0D8A /* AstronomyPictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844813EA2768DCD7009B0D8A /* AstronomyPictureController.swift */; };
 		844813ED2768DD08009B0D8A /* EarthImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844813EC2768DD08009B0D8A /* EarthImageController.swift */; };
 		844813EF2768DD32009B0D8A /* EpicAPIImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844813EE2768DD32009B0D8A /* EpicAPIImageController.swift */; };
+		84C7CCF22769E06200868B08 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CCF12769E06200868B08 /* HTTPService.swift */; };
+		84C7CCF72769E0A000868B08 /* AstronomyPictureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CCF62769E0A000868B08 /* AstronomyPictureService.swift */; };
+		84C7CCF92769E0BB00868B08 /* AstronomyPictureResponseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CCF82769E0BB00868B08 /* AstronomyPictureResponseResource.swift */; };
+		84C7CCFB2769E0D300868B08 /* AstronomyPictureViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CCFA2769E0D300868B08 /* AstronomyPictureViewModel.swift */; };
+		84C7CCFF2769E2E000868B08 /* AstronomyPictureCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CCFE2769E2E000868B08 /* AstronomyPictureCell.swift */; };
+		84C7CD012769E41E00868B08 /* DatePickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CD002769E41E00868B08 /* DatePickerCell.swift */; };
+		84C7CD052769EC6000868B08 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CD042769EC6000868B08 /* Endpoint.swift */; };
+		84C7CD092769EEB900868B08 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CD082769EEB900868B08 /* NetworkError.swift */; };
+		84C7CD0B2769FA7D00868B08 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CD0A2769FA7D00868B08 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +53,15 @@
 		844813EA2768DCD7009B0D8A /* AstronomyPictureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureController.swift; sourceTree = "<group>"; };
 		844813EC2768DD08009B0D8A /* EarthImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImageController.swift; sourceTree = "<group>"; };
 		844813EE2768DD32009B0D8A /* EpicAPIImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicAPIImageController.swift; sourceTree = "<group>"; };
+		84C7CCF12769E06200868B08 /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
+		84C7CCF62769E0A000868B08 /* AstronomyPictureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureService.swift; sourceTree = "<group>"; };
+		84C7CCF82769E0BB00868B08 /* AstronomyPictureResponseResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureResponseResource.swift; sourceTree = "<group>"; };
+		84C7CCFA2769E0D300868B08 /* AstronomyPictureViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureViewModel.swift; sourceTree = "<group>"; };
+		84C7CCFE2769E2E000868B08 /* AstronomyPictureCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureCell.swift; sourceTree = "<group>"; };
+		84C7CD002769E41E00868B08 /* DatePickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerCell.swift; sourceTree = "<group>"; };
+		84C7CD042769EC6000868B08 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		84C7CD082769EEB900868B08 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		84C7CD0A2769FA7D00868B08 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +103,11 @@
 		844813BE2768C824009B0D8A /* edentechlabs-interview-task */ = {
 			isa = PBXGroup;
 			children = (
+				84C7CCEE2769E03E00868B08 /* Shared */,
 				844813E22768D7BD009B0D8A /* TabBar */,
-				844813E12768D657009B0D8A /* showImageFromEpicAPI */,
-				844813E02768D646009B0D8A /* showImageFromEarth */,
-				844813DF2768D638009B0D8A /* showAstronomyPicture */,
+				844813E12768D657009B0D8A /* ShowImageFromEpicAPI */,
+				844813E02768D646009B0D8A /* ShowImageFromEarth */,
+				844813DF2768D638009B0D8A /* ShowAstronomyPicture */,
 				844813BF2768C824009B0D8A /* AppDelegate.swift */,
 				844813C12768C824009B0D8A /* ViewController.swift */,
 				844813C32768C824009B0D8A /* Main.storyboard */,
@@ -108,28 +127,31 @@
 			path = "edentechlabs-interview-taskTests";
 			sourceTree = "<group>";
 		};
-		844813DF2768D638009B0D8A /* showAstronomyPicture */ = {
+		844813DF2768D638009B0D8A /* ShowAstronomyPicture */ = {
 			isa = PBXGroup;
 			children = (
+				84C7CCF52769E07C00868B08 /* ViewModel */,
+				84C7CCF42769E07600868B08 /* Model */,
+				84C7CCF32769E06F00868B08 /* Service */,
 				844813E62768DC3E009B0D8A /* View */,
 			);
-			path = showAstronomyPicture;
+			path = ShowAstronomyPicture;
 			sourceTree = "<group>";
 		};
-		844813E02768D646009B0D8A /* showImageFromEarth */ = {
+		844813E02768D646009B0D8A /* ShowImageFromEarth */ = {
 			isa = PBXGroup;
 			children = (
 				844813E72768DC48009B0D8A /* View */,
 			);
-			path = showImageFromEarth;
+			path = ShowImageFromEarth;
 			sourceTree = "<group>";
 		};
-		844813E12768D657009B0D8A /* showImageFromEpicAPI */ = {
+		844813E12768D657009B0D8A /* ShowImageFromEpicAPI */ = {
 			isa = PBXGroup;
 			children = (
 				844813E52768DC36009B0D8A /* View */,
 			);
-			path = showImageFromEpicAPI;
+			path = ShowImageFromEpicAPI;
 			sourceTree = "<group>";
 		};
 		844813E22768D7BD009B0D8A /* TabBar */ = {
@@ -151,7 +173,8 @@
 		844813E62768DC3E009B0D8A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				844813EA2768DCD7009B0D8A /* AstronomyPictureController.swift */,
+				84C7CCFD2769E2B800868B08 /* Controller */,
+				84C7CCFC2769E2AE00868B08 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -162,6 +185,74 @@
 				844813EC2768DD08009B0D8A /* EarthImageController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		84C7CCEE2769E03E00868B08 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				84C7CD072769EEAD00868B08 /* Enum */,
+				84C7CD062769EE9200868B08 /* Service */,
+				84C7CD042769EC6000868B08 /* Endpoint.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		84C7CCF32769E06F00868B08 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				84C7CCF62769E0A000868B08 /* AstronomyPictureService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		84C7CCF42769E07600868B08 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84C7CCF82769E0BB00868B08 /* AstronomyPictureResponseResource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		84C7CCF52769E07C00868B08 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				84C7CCFA2769E0D300868B08 /* AstronomyPictureViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		84C7CCFC2769E2AE00868B08 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84C7CCFE2769E2E000868B08 /* AstronomyPictureCell.swift */,
+				84C7CD002769E41E00868B08 /* DatePickerCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		84C7CCFD2769E2B800868B08 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				844813EA2768DCD7009B0D8A /* AstronomyPictureController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		84C7CD062769EE9200868B08 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				84C7CCF12769E06200868B08 /* HTTPService.swift */,
+				84C7CD0A2769FA7D00868B08 /* ImageLoader.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		84C7CD072769EEAD00868B08 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				84C7CD082769EEB900868B08 /* NetworkError.swift */,
+			);
+			path = Enum;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,11 +357,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				844813E42768DA37009B0D8A /* TabBarController.swift in Sources */,
+				84C7CD092769EEB900868B08 /* NetworkError.swift in Sources */,
+				84C7CCF72769E0A000868B08 /* AstronomyPictureService.swift in Sources */,
+				84C7CCF92769E0BB00868B08 /* AstronomyPictureResponseResource.swift in Sources */,
+				84C7CD052769EC6000868B08 /* Endpoint.swift in Sources */,
 				844813EF2768DD32009B0D8A /* EpicAPIImageController.swift in Sources */,
+				84C7CCFB2769E0D300868B08 /* AstronomyPictureViewModel.swift in Sources */,
 				844813ED2768DD08009B0D8A /* EarthImageController.swift in Sources */,
 				844813C22768C824009B0D8A /* ViewController.swift in Sources */,
 				844813EB2768DCD7009B0D8A /* AstronomyPictureController.swift in Sources */,
+				84C7CD0B2769FA7D00868B08 /* ImageLoader.swift in Sources */,
+				84C7CCFF2769E2E000868B08 /* AstronomyPictureCell.swift in Sources */,
+				84C7CCF22769E06200868B08 /* HTTPService.swift in Sources */,
 				844813C02768C824009B0D8A /* AppDelegate.swift in Sources */,
+				84C7CD012769E41E00868B08 /* DatePickerCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
