@@ -14,12 +14,13 @@ protocol AstronomyPictureAssemblerProtocol: AnyObject {
 
 class AstronomyPictureAssembler: AstronomyPictureAssemblerProtocol {
     func convertToAstronomyPictureModel(from astronomyPictureResponseResource: AstronomyPictureResponseResource) -> AstronomyPicture {
-        return AstronomyPicture(resource: astronomyPictureResponseResource.resource,
-                                conceptTags: astronomyPictureResponseResource.conceptTags,
+        return AstronomyPicture(copyright: astronomyPictureResponseResource.copyright,
+                                media_type: astronomyPictureResponseResource.media_type,
                                 date: astronomyPictureResponseResource.date,
                                 title: astronomyPictureResponseResource.title,
                                 url: astronomyPictureResponseResource.url,
                                 explanation: astronomyPictureResponseResource.explanation,
-                                concepts: astronomyPictureResponseResource.concepts)
+                                hdurl: astronomyPictureResponseResource.hdurl,
+                                service_version: astronomyPictureResponseResource.service_version)
     }
 }

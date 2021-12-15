@@ -9,11 +9,12 @@
 import Foundation
 
 struct AstronomyPicture {
-    let resource: [String: String]
-    let conceptTags: String
-    let date: Date
+    let copyright: String
+    let media_type: String
+    let date: String
     let title: String
     let url: String
     let explanation: String
-    let concepts: [Int: String]
+    let hdurl: String
+    let service_version: String
 }

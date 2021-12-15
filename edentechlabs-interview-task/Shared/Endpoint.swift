@@ -27,7 +27,7 @@ extension Endpoint {
 
 extension Endpoint {
     static func astronomyPicture(apiKey: String, date: String, conceptTags: String) -> Endpoint {
-        return Endpoint(path: "/apod",
+        return Endpoint(path: "/planetary/apod",
                         queryItems: [
                 URLQueryItem(name: "api_key", value: apiKey),
                 URLQueryItem(name: "date", value: date),

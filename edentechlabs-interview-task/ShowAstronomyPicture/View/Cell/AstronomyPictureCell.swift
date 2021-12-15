@@ -53,6 +53,7 @@ class AstronomyPictureCell: UITableViewCell {
         let guide = contentView.layoutMarginsGuide
         
         NSLayoutConstraint.activate([
+            astronomyImageView.heightAnchor.constraint(equalToConstant: 250),
             stackView.topAnchor.constraint(equalTo: guide.topAnchor),
             stackView.leadingAnchor.constraint(equalTo: guide.leadingAnchor),
             stackView.trailingAnchor.constraint(equalTo: guide.trailingAnchor),

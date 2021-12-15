@@ -72,8 +72,9 @@ extension AstronomyPictureController {
 }
 
 extension AstronomyPictureController: AstronomyPictureViewModelDelegate {
-    func setDisplayModel(_ displayModel: AstronomyPictureDisplayModel) {
-        //
+    func updateDisplayModel(_ displayModel: AstronomyPictureDisplayModel) {
+        self.displayModel = displayModel
+        tableView.reloadData()
     }
     
     func startLoading() {

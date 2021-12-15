@@ -11,7 +11,7 @@ import Foundation
 protocol AstronomyPictureViewModelDelegate: AnyObject {
     func startLoading()
     func stopLoading()
-    func setDisplayModel(_ displayModel: AstronomyPictureDisplayModel)
+    func updateDisplayModel(_ displayModel: AstronomyPictureDisplayModel)
     func setCurrentDate(_ date: String?)
 }
 
@@ -30,7 +30,7 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
     weak var delegate: AstronomyPictureViewModelDelegate?
     var astronomyPictureModel: AstronomyPicture?
     
-    var astronomyPictureDisplayModel: AstronomyPictureDisplayModel?
+    var astronomyPictureDisplayModel = AstronomyPictureDisplayModel(image: nil, title: "")
     
     init(astronomyPictureService: AstronomyPictureServiceProtocol = AstronomyPictureService(),
          imageLoader: ImageLoaderProtocol = ImageLoader(),
@@ -48,6 +48,7 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
         let currentDate = dateFormatter.string(from: Date())
         
         delegate?.setCurrentDate(currentDate)
+        loadAstronomyPictureData(Date())
     }
     
     func doneButtonIsClicked(_ date: Date?) {
@@ -57,7 +58,7 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
     }
     
     func cellIsBeingConfigured() {
-        
+       //
     }
     
     private func loadAstronomyPictureData(_ date: Date) {
@@ -71,6 +72,10 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
             if let result = result,
                 error == nil {
                 self.astronomyPictureModel = result
+                if let astronomyPictureModel = self.astronomyPictureModel {
+                    self.astronomyPictureDisplayModel.title = astronomyPictureModel.title
+                    self.delegate?.updateDisplayModel(self.astronomyPictureDisplayModel)
+                }
                 self.loadImage(urlString: self.astronomyPictureModel?.url)
             }
         }
@@ -83,7 +88,10 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
                 guard let self = self else { return }
                 if let data = data,
                     error == nil {
-                    //self.delegate?.setAstronomyImage(data)
+                    if let image = self.imageAssembler.convertToImage(from: data) {
+                        self.astronomyPictureDisplayModel.image = image
+                    }
+                    self.delegate?.updateDisplayModel(self.astronomyPictureDisplayModel)
                 }
             }
         }

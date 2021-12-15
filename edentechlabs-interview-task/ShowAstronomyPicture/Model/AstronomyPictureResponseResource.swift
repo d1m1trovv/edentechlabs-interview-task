@@ -8,12 +8,13 @@
 
 import Foundation
 
-struct AstronomyPictureResponseResource: Codable, Equatable {
-    let resource: [String: String]
-    let conceptTags: String
-    let date: Date
+struct AstronomyPictureResponseResource: Codable, Hashable {
+    let copyright: String
+    let date: String
+    let explanation: String
+    let hdurl: String
+    let media_type: String
+    let service_version: String
     let title: String
     let url: String
-    let explanation: String
-    let concepts: [Int: String]
 }

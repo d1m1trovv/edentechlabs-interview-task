@@ -44,7 +44,6 @@ class DatePickerCell: UITableViewCell {
     lazy var datePicker: UIDatePicker = {
         let datePicker = UIDatePicker()
         datePicker.datePickerMode = .date
-        datePicker.minimumDate = Date()
         return datePicker
     }()
     
@@ -96,6 +95,12 @@ class DatePickerCell: UITableViewCell {
     }
     
     private func configureDatePicker() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let minimumDate = dateFormatter.date(from: "1995-06-16")
+        
+        datePicker.minimumDate = minimumDate
+        
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
                                          target: self,
                                          action: #selector(doneButtonClicked(_:)))

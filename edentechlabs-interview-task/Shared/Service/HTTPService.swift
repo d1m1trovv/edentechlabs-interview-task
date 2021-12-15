@@ -24,8 +24,9 @@ protocol HTTPServiceProtocol: AnyObject {
 class HTTPService: HTTPServiceProtocol {
     func getAstronomyPicture(date: String,
                              completion: @escaping (AstronomyPictureResponseResource?, NetworkError?) -> Void) {
-        let endpoint = Endpoint.astronomyPicture(apiKey: "he4ZKTcfjgpo2iOvgQpAAb5MoR8r3ZnGtoRHe8ds", date: date, conceptTags: "true")
+        let endpoint = Endpoint.astronomyPicture(apiKey: "he4ZKTcfjgpo2iOvgQpAAb5MoR8r3ZnGtoRHe8ds", date: date, conceptTags: "True")
         guard let url = endpoint.url else { return }
+        print(url)
         
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data,
