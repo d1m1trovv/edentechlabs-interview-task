@@ -9,7 +9,7 @@
 import Foundation
 
 protocol AstronomyPictureServiceProtocol: AnyObject {
-    func getAstronomyPicture(date: Date,
+    func getAstronomyPicture(date: String,
                              completion: @escaping (AstronomyPicture?, NetworkError?) -> Void)
 }
 
@@ -23,7 +23,7 @@ class AstronomyPictureService: AstronomyPictureServiceProtocol {
         self.astronomyPictureAssembler = astronomyPictureAssembler
     }
     
-    func getAstronomyPicture(date: Date,
+    func getAstronomyPicture(date: String,
                              completion: @escaping (AstronomyPicture?, NetworkError?) -> Void) {
         httpService.getAstronomyPicture(date: date) { [weak self] result, error in
             guard let self = self else { return }

@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol DatePickerCellDelegate: AnyObject {
-    func doneButtonIsClicked(_ date: String?)
+    func doneButtonIsClicked(_ date: Date?)
 }
 
 class DatePickerCell: UITableViewCell {
@@ -48,16 +48,12 @@ class DatePickerCell: UITableViewCell {
         return datePicker
     }()
     
-    lazy var doneButton: UIBarButtonItem = {
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: nil)
-        return doneButton
-    }()
-    
     lazy var stackView = UIStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureView()
+        configureDatePicker()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -76,12 +72,10 @@ class DatePickerCell: UITableViewCell {
         dateFormatter.timeStyle = .none
         
         dateTextField.text = dateFormatter.string(from: datePicker.date)
-        delegate?.doneButtonIsClicked(dateTextField.text)
+        delegate?.doneButtonIsClicked(datePicker.date)
     }
     
     private func configureView() {
-        configureDatePicker()
-        
         contentView.layoutMargins = UIEdgeInsets(top: 8.0, left: 16.0, bottom: 8.0, right: 16.0)
         
         stackView = UIStackView(arrangedSubviews: [titleLabel, dateTextField])
@@ -102,7 +96,9 @@ class DatePickerCell: UITableViewCell {
     }
     
     private func configureDatePicker() {
-        doneButton.action = #selector(doneButtonClicked(_:))
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
+                                         target: self,
+                                         action: #selector(doneButtonClicked(_:)))
         
         toolbar.sizeToFit()
         toolbar.setItems([doneButton], animated: true)
@@ -112,8 +108,3 @@ class DatePickerCell: UITableViewCell {
     }
 }
 
-extension DatePickerCell: AstronomyPictureControllerDelegate {
-    func setDateTextFieldText(_ text: String?) {
-        dateTextField.text = text
-    }
-}

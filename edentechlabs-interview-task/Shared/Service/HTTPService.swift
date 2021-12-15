@@ -17,14 +17,14 @@ protocol URLSessionProtocol: AnyObject {
 extension URLSession: URLSessionProtocol {}
 
 protocol HTTPServiceProtocol: AnyObject {
-    func getAstronomyPicture(date: Date,
+    func getAstronomyPicture(date: String,
                              completion: @escaping (AstronomyPictureResponseResource?, NetworkError?) -> Void)
 }
 
 class HTTPService: HTTPServiceProtocol {
-    func getAstronomyPicture(date: Date,
+    func getAstronomyPicture(date: String,
                              completion: @escaping (AstronomyPictureResponseResource?, NetworkError?) -> Void) {
-        let endpoint = Endpoint.astronomyPicture(apiKey: "he4ZKTcfjgpo2iOvgQpAAb5MoR8r3ZnGtoRHe8ds", date: "", conceptTags: "true")
+        let endpoint = Endpoint.astronomyPicture(apiKey: "he4ZKTcfjgpo2iOvgQpAAb5MoR8r3ZnGtoRHe8ds", date: date, conceptTags: "true")
         guard let url = endpoint.url else { return }
         
         URLSession.shared.dataTask(with: url) { data, response, error in

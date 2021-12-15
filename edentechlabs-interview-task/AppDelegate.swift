@@ -53,7 +53,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let epicAPIController = EpicAPIImageController()
         
         let firstNavController = tabBarController.appendNavigationController(astronomyPictureController,
-                                                                             "First",
+                                                                             "Astronomy Picture",
                                                                              image: UIImage(named: "home")!)
         let secondNavController = tabBarController.appendNavigationController(earthImageController,
                                                                               "Second",

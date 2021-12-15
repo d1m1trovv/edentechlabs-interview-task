@@ -17,6 +17,7 @@
 		844813EB2768DCD7009B0D8A /* AstronomyPictureController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844813EA2768DCD7009B0D8A /* AstronomyPictureController.swift */; };
 		844813ED2768DD08009B0D8A /* EarthImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844813EC2768DD08009B0D8A /* EarthImageController.swift */; };
 		844813EF2768DD32009B0D8A /* EpicAPIImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844813EE2768DD32009B0D8A /* EpicAPIImageController.swift */; };
+		84A28E2B276A33C7009D5EDC /* ImageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A28E2A276A33C7009D5EDC /* ImageAssembler.swift */; };
 		84C7CCF22769E06200868B08 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CCF12769E06200868B08 /* HTTPService.swift */; };
 		84C7CCF72769E0A000868B08 /* AstronomyPictureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CCF62769E0A000868B08 /* AstronomyPictureService.swift */; };
 		84C7CCF92769E0BB00868B08 /* AstronomyPictureResponseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CCF82769E0BB00868B08 /* AstronomyPictureResponseResource.swift */; };
@@ -56,6 +57,7 @@
 		844813EA2768DCD7009B0D8A /* AstronomyPictureController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureController.swift; sourceTree = "<group>"; };
 		844813EC2768DD08009B0D8A /* EarthImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImageController.swift; sourceTree = "<group>"; };
 		844813EE2768DD32009B0D8A /* EpicAPIImageController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicAPIImageController.swift; sourceTree = "<group>"; };
+		84A28E2A276A33C7009D5EDC /* ImageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssembler.swift; sourceTree = "<group>"; };
 		84C7CCF12769E06200868B08 /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
 		84C7CCF62769E0A000868B08 /* AstronomyPictureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureService.swift; sourceTree = "<group>"; };
 		84C7CCF82769E0BB00868B08 /* AstronomyPictureResponseResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureResponseResource.swift; sourceTree = "<group>"; };
@@ -268,6 +270,7 @@
 			isa = PBXGroup;
 			children = (
 				84C7CD0F2769FD2E00868B08 /* AstronomyPictureAssembler.swift */,
+				84A28E2A276A33C7009D5EDC /* ImageAssembler.swift */,
 			);
 			path = Assembler;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				84C7CD092769EEB900868B08 /* NetworkError.swift in Sources */,
 				84C7CCF72769E0A000868B08 /* AstronomyPictureService.swift in Sources */,
 				84C7CCF92769E0BB00868B08 /* AstronomyPictureResponseResource.swift in Sources */,
+				84A28E2B276A33C7009D5EDC /* ImageAssembler.swift in Sources */,
 				84C7CD052769EC6000868B08 /* Endpoint.swift in Sources */,
 				844813EF2768DD32009B0D8A /* EpicAPIImageController.swift in Sources */,
 				84C7CCFB2769E0D300868B08 /* AstronomyPictureViewModel.swift in Sources */,

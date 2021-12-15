@@ -9,19 +9,22 @@
 import Foundation
 import UIKit
 
+struct AstronomyPictureDisplayModel {
+    var image: UIImage?
+    var title: String
+}
+
 protocol AstronomyPictureControllerDelegate: AnyObject {
     func setDateTextFieldText(_ text: String?)
 }
 
 class AstronomyPictureController: UITableViewController {
+    private let imageAssembler = ImageAssembler()
     var viewModel: AstronomyPictureViewModel?
     
-    lazy var doneButton: UIBarButtonItem = {
-        let doneButton = UIBarButtonItem()
-        return doneButton
-    }()
-    
     var currentDate: String?
+    
+    var displayModel = AstronomyPictureDisplayModel(image: UIImage(named: "placeholder"), title: "No title")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,8 @@ extension AstronomyPictureController {
         case 0:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: AstronomyPictureCell.reuseIdentifier,
                                                            for: indexPath) as? AstronomyPictureCell else { fatalError() }
+            cell.astronomyImageView.image = displayModel.image
+            cell.setTitleLabelText(displayModel.title)
             return cell
         case 1:
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerCell.reuseIdentifier,
@@ -67,6 +72,10 @@ extension AstronomyPictureController {
 }
 
 extension AstronomyPictureController: AstronomyPictureViewModelDelegate {
+    func setDisplayModel(_ displayModel: AstronomyPictureDisplayModel) {
+        //
+    }
+    
     func startLoading() {
         //
     }
@@ -81,7 +90,7 @@ extension AstronomyPictureController: AstronomyPictureViewModelDelegate {
 }
 
 extension AstronomyPictureController: DatePickerCellDelegate {
-    func doneButtonIsClicked(_ date: String?) {
+    func doneButtonIsClicked(_ date: Date?) {
         viewModel?.doneButtonIsClicked(date)
     }
 }

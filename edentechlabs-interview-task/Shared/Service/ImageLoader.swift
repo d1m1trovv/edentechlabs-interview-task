@@ -8,7 +8,11 @@
 
 import Foundation
 
-class ImageLoader {
+protocol ImageLoaderProtocol: AnyObject {
+    func load(url: URL, completion: @escaping (Data?, NetworkError?) -> Void)
+}
+
+class ImageLoader: ImageLoaderProtocol {
     func load(url: URL, completion: @escaping (Data?, NetworkError?) -> Void) {
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data,
@@ -23,6 +27,6 @@ class ImageLoader {
                     completion(nil, .connectionFailed)
                 }
             }
-        }
+        }.resume()
     }
 }
