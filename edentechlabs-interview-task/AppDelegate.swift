@@ -56,6 +56,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         earthImageController.viewModel = earthImageViewModel
         
         let epicAPIController = EpicAPIImageController()
+        let epicImageViewModel = EPICImageViewModel()
+        epicAPIController.viewModel = epicImageViewModel
         
         let firstNavController = tabBarController.appendNavigationController(astronomyPictureController,
                                                                              "Astronomy Picture",
@@ -64,7 +66,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                                                               "Earth Image",
                                                                               image: UIImage(named: "home")!)
         let thirdNavController = tabBarController.appendNavigationController(epicAPIController,
-                                                                             "Third",
+                                                                             "EPIC Image",
                                                                              image: UIImage(named: "home")!)
         
         tabBarController.setViewControllers([firstNavController, secondNavController, thirdNavController], animated: false)

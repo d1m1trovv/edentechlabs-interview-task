@@ -15,3 +15,14 @@ struct CoordinateResponseResource: Codable, Hashable {
     let sunPosition: PositionResponseResource
     let attitudeQuaternios: AttitudeResponseResource
 }
+
+extension CoordinateResponseResource {
+    enum CodingKeys: String, CodingKey {
+        case centroidCoordinates = "centroid_coordinates"
+        case dscovrPosition = "dscovr_j2000_position"
+        case lunarPosition = "lunar_j2000_position"
+        case sunPosition = "sun_j2000_position"
+        case attitudeQuaternios = "attitude_quaternions"
+    }
+}
+

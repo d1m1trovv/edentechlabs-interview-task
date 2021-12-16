@@ -14,8 +14,10 @@ protocol EPICImageAssemblerProtocol: AnyObject {
 
 class EPICImageAssembler: EPICImageAssemblerProtocol {
     func convertToEPICImage(from epicImageResponseResource: EPICImageResponseResource) -> EPICImage {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return EPICImage(name: epicImageResponseResource.imageName,
-                         date: epicImageResponseResource.date,
+                         date: dateFormatter.date(from: epicImageResponseResource.date)!,
                          type: "png")
     }
 }

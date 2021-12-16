@@ -8,7 +8,12 @@
 
 import Foundation
 
-class EpicImageService {
+protocol EpicImageServiceProtocol: AnyObject {
+    func getAllAvailableDates(completion: @escaping ([AvailableDate]?, NetworkError?) -> Void)
+    func getImagesForGivenDate(date: String, completion: @escaping (EPICImage?, NetworkError?) -> Void)
+}
+
+class EpicImageService: EpicImageServiceProtocol {
     private let httpService: HTTPServiceProtocol
     private let dateAssembler: DateAssemblerProtocol
     private let epicImageAssembler: EPICImageAssemblerProtocol

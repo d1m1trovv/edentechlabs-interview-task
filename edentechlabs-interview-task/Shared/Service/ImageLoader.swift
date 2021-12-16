@@ -12,6 +12,8 @@ protocol ImageLoaderProtocol: AnyObject {
     func loadImage(url: URL, completion: @escaping (Data?, NetworkError?) -> Void)
     func loadImageForCurrentLocation(locationRequestResource: LocationRequestResource,
                                      completion: @escaping (Data?, NetworkError?) -> Void)
+    func loadEPICImage(requestResource: EPICImageRequestResource,
+                       completion: @escaping (Data?, NetworkError?) -> Void)
 }
 
 class ImageLoader: ImageLoaderProtocol {
@@ -56,7 +58,8 @@ class ImageLoader: ImageLoaderProtocol {
         }.resume()
     }
     
-    func loadEPICImage(requestResource: EPICImageRequestResource, completion: @escaping (Data?, NetworkError?) -> Void) {
+    func loadEPICImage(requestResource: EPICImageRequestResource,
+                       completion: @escaping (Data?, NetworkError?) -> Void) {
         let endpoint = Endpoint.mostRecentImage(year: requestResource.year,
                                                 month: requestResource.month,
                                                 day: requestResource.day,

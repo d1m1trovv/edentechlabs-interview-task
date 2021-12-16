@@ -9,6 +9,6 @@
 import Foundation
 
 struct LocationResponseResource: Codable, Hashable {
-    let lon: Float
     let lat: Float
+    let lon: Float
 }

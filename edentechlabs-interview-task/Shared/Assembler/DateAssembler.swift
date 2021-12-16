@@ -10,11 +10,20 @@ import Foundation
 
 protocol DateAssemblerProtocol: AnyObject {
     func convertToDateModel(from dateResponseResource: DateResponseResource) -> AvailableDate
+    func convertToDateModel(from date: String) -> AvailableDate
+    func getDateComponent(component: String, from date: Date) -> String
 }
 
 class DateAssembler: DateAssemblerProtocol {
     func convertToDateModel(from dateResponseResource: DateResponseResource) -> AvailableDate {
         let seperatedDate = dateResponseResource.date.components(separatedBy: "-")
+        return AvailableDate(year: seperatedDate[0],
+                             month: seperatedDate[1],
+                             day: seperatedDate[2])
+    }
+    
+    func convertToDateModel(from date: String) -> AvailableDate {
+        let seperatedDate = date.components(separatedBy: "-")
         return AvailableDate(year: seperatedDate[0],
                              month: seperatedDate[1],
                              day: seperatedDate[2])

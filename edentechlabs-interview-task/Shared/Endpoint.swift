@@ -46,14 +46,14 @@ extension Endpoint {
     }
     
     static func allAvailableDates(apiKey: String) -> Endpoint {
-        return Endpoint(path: "EPIC/api/enahnced/all",
+        return Endpoint(path: "/EPIC/api/enhanced/all",
                         queryItems: [
                             URLQueryItem(name: "api_key", value: apiKey)
             ])
     }
     
     static func imageryForGivenDate(date: String, apiKey: String) -> Endpoint {
-        return Endpoint(path: "EPIC/api/enhanced/date/\(date)",
+        return Endpoint(path: "/EPIC/api/enhanced/date/\(date)",
                         queryItems: [
                             URLQueryItem(name: "api_key", value: apiKey)
             ])
@@ -65,7 +65,7 @@ extension Endpoint {
                                 imageType: String,
                                 imageName: String,
                                 apiKey: String) -> Endpoint {
-        return Endpoint(path: "EPIC/api/natural/\(year)/\(month)/\(day)/\(imageType)/\(imageName)",
+        return Endpoint(path: "/EPIC/api/natural/\(year)/\(month)/\(day)/\(imageType)/\(imageName)",
                         queryItems: [
                             URLQueryItem(name: "api_key", value: apiKey)
             ])

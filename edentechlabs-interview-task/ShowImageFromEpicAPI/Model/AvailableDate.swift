@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AvailableDate {
+struct AvailableDate: Hashable {
     let year: String
     let month: String
     let day: String
