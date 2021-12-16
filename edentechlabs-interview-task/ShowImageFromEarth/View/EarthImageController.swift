@@ -31,7 +31,8 @@ class EarthImageController: UIViewController {
     }
     
     private func configureImageView() {
-        imageView.imageView.image = displayModel.image
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.setImage(displayModel.image)
         let guide = view.safeAreaLayoutGuide
         
         view.addSubview(imageView)

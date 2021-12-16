@@ -49,8 +49,8 @@ class EarthImageViewModel: NSObject, EarthImageViewModelProtocol {
         
         requestResource = LocationRequestResource(longitude: String(coordinate.longitude),
                                                   latitude: String(coordinate.latitude),
-                                                  date: formattedDate)
-        
+                                                  date: "2019-07-05")
+        loadImageForCurrentLocation()
     }
     
     private func loadImageForCurrentLocation() {

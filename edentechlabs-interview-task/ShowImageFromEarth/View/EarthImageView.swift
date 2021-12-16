@@ -13,7 +13,7 @@ class EarthImageView: UIScrollView {
     lazy var imageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -37,11 +37,13 @@ class EarthImageView: UIScrollView {
             imageView.topAnchor.constraint(equalTo: topAnchor),
             imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
             imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            imageView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            imageView.heightAnchor.constraint(equalTo: heightAnchor),
+            imageView.widthAnchor.constraint(equalTo: widthAnchor)
             ])
 
         minimumZoomScale = 1
-        maximumZoomScale = 3
+        maximumZoomScale = 4
         showsHorizontalScrollIndicator = false
         showsVerticalScrollIndicator = false
         delegate = self

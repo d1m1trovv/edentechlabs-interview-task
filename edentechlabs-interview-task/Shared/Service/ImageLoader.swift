@@ -39,6 +39,7 @@ class ImageLoader: ImageLoaderProtocol {
                                                date: locationRequestResource.date,
                                                apiKey: "he4ZKTcfjgpo2iOvgQpAAb5MoR8r3ZnGtoRHe8ds")
         guard let url = endpoint.url else { return }
+        print(url)
         URLSession.shared.dataTask(with: url) { data, response, error in
             if let data = data,
                 let httpResponse = response as? HTTPURLResponse,
