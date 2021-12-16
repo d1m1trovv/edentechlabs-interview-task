@@ -65,12 +65,6 @@ class DatePickerCell: UITableViewCell {
     
     @objc func doneButtonClicked(_ sender: UIBarButtonItem) {
         dateTextField.resignFirstResponder()
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        
-        dateTextField.text = dateFormatter.string(from: datePicker.date)
         delegate?.doneButtonIsClicked(datePicker.date)
     }
     
@@ -100,6 +94,7 @@ class DatePickerCell: UITableViewCell {
         let minimumDate = dateFormatter.date(from: "1995-06-16")
         
         datePicker.minimumDate = minimumDate
+        datePicker.maximumDate = Date()
         
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done,
                                          target: self,

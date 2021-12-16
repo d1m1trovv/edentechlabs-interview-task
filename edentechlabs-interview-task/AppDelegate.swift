@@ -46,17 +46,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         
         let tabBarController = TabBarController()
+        
         let astronomyPictureController = AstronomyPictureController()
         let astronomyPictureViewModel = AstronomyPictureViewModel()
         astronomyPictureController.viewModel = astronomyPictureViewModel
+        
         let earthImageController = EarthImageController()
+        let earthImageViewModel = EarthImageViewModel()
+        earthImageController.viewModel = earthImageViewModel
+        
         let epicAPIController = EpicAPIImageController()
         
         let firstNavController = tabBarController.appendNavigationController(astronomyPictureController,
                                                                              "Astronomy Picture",
                                                                              image: UIImage(named: "home")!)
         let secondNavController = tabBarController.appendNavigationController(earthImageController,
-                                                                              "Second",
+                                                                              "Earth Image",
                                                                               image: UIImage(named: "home")!)
         let thirdNavController = tabBarController.appendNavigationController(epicAPIController,
                                                                              "Third",

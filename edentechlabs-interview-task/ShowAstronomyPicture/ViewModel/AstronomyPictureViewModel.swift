@@ -12,7 +12,7 @@ protocol AstronomyPictureViewModelDelegate: AnyObject {
     func startLoading()
     func stopLoading()
     func updateDisplayModel(_ displayModel: AstronomyPictureDisplayModel)
-    func setCurrentDate(_ date: String?)
+    func reloadData()
 }
 
 protocol AstronomyPictureViewModelProtocol: AnyObject {
@@ -30,7 +30,7 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
     weak var delegate: AstronomyPictureViewModelDelegate?
     var astronomyPictureModel: AstronomyPicture?
     
-    var astronomyPictureDisplayModel = AstronomyPictureDisplayModel(image: nil, title: "")
+    var astronomyPictureDisplayModel = AstronomyPictureDisplayModel(image: nil, title: "", date: "")
     
     init(astronomyPictureService: AstronomyPictureServiceProtocol = AstronomyPictureService(),
          imageLoader: ImageLoaderProtocol = ImageLoader(),
@@ -41,13 +41,6 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
     }
     
     func viewLoaded() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        
-        let currentDate = dateFormatter.string(from: Date())
-        
-        delegate?.setCurrentDate(currentDate)
         loadAstronomyPictureData(Date())
     }
     
@@ -74,7 +67,10 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
                 self.astronomyPictureModel = result
                 if let astronomyPictureModel = self.astronomyPictureModel {
                     self.astronomyPictureDisplayModel.title = astronomyPictureModel.title
+                    self.astronomyPictureDisplayModel.date = self.convertDateToUserFriendlyFormat(astronomyPictureModel.date)
                     self.delegate?.updateDisplayModel(self.astronomyPictureDisplayModel)
+                    print(Thread.isMainThread)
+                    self.delegate?.reloadData()
                 }
                 self.loadImage(urlString: self.astronomyPictureModel?.url)
             }
@@ -84,7 +80,7 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
     private func loadImage(urlString: String?) {
         if let urlString = urlString {
             guard let url = URL(string: urlString) else { return }
-            imageLoader.load(url: url) { [weak self] data, error in
+            imageLoader.loadImage(url: url) { [weak self] data, error in
                 guard let self = self else { return }
                 if let data = data,
                     error == nil {
@@ -92,8 +88,24 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
                         self.astronomyPictureDisplayModel.image = image
                     }
                     self.delegate?.updateDisplayModel(self.astronomyPictureDisplayModel)
+                    print(Thread.isMainThread)
+                    self.delegate?.reloadData()
                 }
             }
         }
+    }
+    
+    private func convertDateToUserFriendlyFormat(_ date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let date = dateFormatter.date(from: date)
+        if let date = date {
+            dateFormatter.dateFormat = "MMM d, yyyy"
+            let stringDate = dateFormatter.string(from: date)
+            return stringDate
+        }
+        
+        return ""
     }
 }

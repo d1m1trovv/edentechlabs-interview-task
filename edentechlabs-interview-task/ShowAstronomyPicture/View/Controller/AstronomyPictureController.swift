@@ -12,6 +12,7 @@ import UIKit
 struct AstronomyPictureDisplayModel {
     var image: UIImage?
     var title: String
+    var date: String
 }
 
 protocol AstronomyPictureControllerDelegate: AnyObject {
@@ -22,9 +23,9 @@ class AstronomyPictureController: UITableViewController {
     private let imageAssembler = ImageAssembler()
     var viewModel: AstronomyPictureViewModel?
     
-    var currentDate: String?
+    var currentDate = Date()
     
-    var displayModel = AstronomyPictureDisplayModel(image: UIImage(named: "placeholder"), title: "No title")
+    var displayModel = AstronomyPictureDisplayModel(image: UIImage(named: "placeholder"), title: "", date: "")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +64,7 @@ extension AstronomyPictureController {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: DatePickerCell.reuseIdentifier,
                                                            for: indexPath) as? DatePickerCell else { fatalError() }
             cell.delegate = self
-            cell.dateTextField.text = currentDate
+            cell.dateTextField.text = displayModel.date
             return cell
         default:
             return UITableViewCell()
@@ -72,9 +73,14 @@ extension AstronomyPictureController {
 }
 
 extension AstronomyPictureController: AstronomyPictureViewModelDelegate {
+    func reloadData() {
+        print(Thread.isMainThread)
+        tableView.reloadData()
+        print("Table reloaded")
+    }
+    
     func updateDisplayModel(_ displayModel: AstronomyPictureDisplayModel) {
         self.displayModel = displayModel
-        tableView.reloadData()
     }
     
     func startLoading() {
@@ -83,10 +89,6 @@ extension AstronomyPictureController: AstronomyPictureViewModelDelegate {
     
     func stopLoading() {
         //
-    }
-    
-    func setCurrentDate(_ date: String?) {
-        currentDate = date
     }
 }
 

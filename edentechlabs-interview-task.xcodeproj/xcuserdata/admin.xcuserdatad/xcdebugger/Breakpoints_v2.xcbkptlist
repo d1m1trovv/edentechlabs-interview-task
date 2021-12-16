@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "edentechlabs-interview-task/Shared/Endpoint.swift"
-            timestampString = "661282438.259599"
+            filePath = "edentechlabs-interview-task/Shared/Service/ImageLoader.swift"
+            timestampString = "661344462.025806"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "url"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "edentechlabs-interview-task/Shared/Service/HTTPService.swift"
-            timestampString = "661282438.259683"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "getAstronomyPicture(date:completion:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "loadImageForCurrentLocation(locationRequestResource:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "edentechlabs-interview-task/Shared/Service/HTTPService.swift"
-            timestampString = "661282438.2601269"
+            filePath = "edentechlabs-interview-task/ShowImageFromEarth/Service/EarthImageService.swift"
+            timestampString = "661344462.0258729"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "getAstronomyPicture(date:completion:)"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "getImageForCurrentLocation(locationRequestResource:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -57,29 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "edentechlabs-interview-task/ShowAstronomyPicture/ViewModel/AstronomyPictureViewModel.swift"
-            timestampString = "661282438.260473"
+            filePath = "edentechlabs-interview-task/ShowImageFromEarth/ViewModel/EarthImageViewModel.swift"
+            timestampString = "661344462.025932"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "loadImage(urlString:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "edentechlabs-interview-task/ShowAstronomyPicture/View/Cell/DatePickerCell.swift"
-            timestampString = "661282438.260563"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "configureDatePicker()"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "loadImageForCurrentLocation()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
