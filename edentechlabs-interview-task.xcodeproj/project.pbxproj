@@ -23,6 +23,19 @@
 		844D710A276B3BD700A33BB5 /* EarthImageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D7109276B3BD700A33BB5 /* EarthImageAssembler.swift */; };
 		844D710C276B3D4100A33BB5 /* EarthImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D710B276B3D4100A33BB5 /* EarthImageViewModel.swift */; };
 		844D710E276B3FD800A33BB5 /* EarthImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D710D276B3FD800A33BB5 /* EarthImageView.swift */; };
+		844D7113276B73B500A33BB5 /* DateResponseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D7112276B73B500A33BB5 /* DateResponseResource.swift */; };
+		844D7115276B744200A33BB5 /* EpicImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D7114276B744200A33BB5 /* EpicImageService.swift */; };
+		844D7117276B748900A33BB5 /* DateAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D7116276B748900A33BB5 /* DateAssembler.swift */; };
+		844D7119276B74E400A33BB5 /* AvailableDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D7118276B74E400A33BB5 /* AvailableDate.swift */; };
+		844D711B276B795C00A33BB5 /* EPICImageResponseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D711A276B795C00A33BB5 /* EPICImageResponseResource.swift */; };
+		844D711D276B79C900A33BB5 /* LocationResponseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D711C276B79C900A33BB5 /* LocationResponseResource.swift */; };
+		844D711F276B79D200A33BB5 /* PositionResponseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D711E276B79D200A33BB5 /* PositionResponseResource.swift */; };
+		844D7121276B7B9800A33BB5 /* CoordinateResponseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D7120276B7B9800A33BB5 /* CoordinateResponseResource.swift */; };
+		844D7123276B7BF800A33BB5 /* AttitudeResponseResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D7122276B7BF800A33BB5 /* AttitudeResponseResource.swift */; };
+		844D7125276B87BB00A33BB5 /* EPICImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D7124276B87BB00A33BB5 /* EPICImage.swift */; };
+		844D7127276B87E200A33BB5 /* EPICImageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D7126276B87E200A33BB5 /* EPICImageAssembler.swift */; };
+		844D7129276B8E8500A33BB5 /* EPICImageRequestResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D7128276B8E8500A33BB5 /* EPICImageRequestResource.swift */; };
+		844D712B276B946B00A33BB5 /* EPICImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844D712A276B946B00A33BB5 /* EPICImageViewModel.swift */; };
 		84A28E2B276A33C7009D5EDC /* ImageAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A28E2A276A33C7009D5EDC /* ImageAssembler.swift */; };
 		84C7CCF22769E06200868B08 /* HTTPService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CCF12769E06200868B08 /* HTTPService.swift */; };
 		84C7CCF72769E0A000868B08 /* AstronomyPictureService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C7CCF62769E0A000868B08 /* AstronomyPictureService.swift */; };
@@ -69,6 +82,19 @@
 		844D7109276B3BD700A33BB5 /* EarthImageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImageAssembler.swift; sourceTree = "<group>"; };
 		844D710B276B3D4100A33BB5 /* EarthImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImageViewModel.swift; sourceTree = "<group>"; };
 		844D710D276B3FD800A33BB5 /* EarthImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImageView.swift; sourceTree = "<group>"; };
+		844D7112276B73B500A33BB5 /* DateResponseResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateResponseResource.swift; sourceTree = "<group>"; };
+		844D7114276B744200A33BB5 /* EpicImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpicImageService.swift; sourceTree = "<group>"; };
+		844D7116276B748900A33BB5 /* DateAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAssembler.swift; sourceTree = "<group>"; };
+		844D7118276B74E400A33BB5 /* AvailableDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableDate.swift; sourceTree = "<group>"; };
+		844D711A276B795C00A33BB5 /* EPICImageResponseResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPICImageResponseResource.swift; sourceTree = "<group>"; };
+		844D711C276B79C900A33BB5 /* LocationResponseResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationResponseResource.swift; sourceTree = "<group>"; };
+		844D711E276B79D200A33BB5 /* PositionResponseResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PositionResponseResource.swift; sourceTree = "<group>"; };
+		844D7120276B7B9800A33BB5 /* CoordinateResponseResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinateResponseResource.swift; sourceTree = "<group>"; };
+		844D7122276B7BF800A33BB5 /* AttitudeResponseResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttitudeResponseResource.swift; sourceTree = "<group>"; };
+		844D7124276B87BB00A33BB5 /* EPICImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPICImage.swift; sourceTree = "<group>"; };
+		844D7126276B87E200A33BB5 /* EPICImageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPICImageAssembler.swift; sourceTree = "<group>"; };
+		844D7128276B8E8500A33BB5 /* EPICImageRequestResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPICImageRequestResource.swift; sourceTree = "<group>"; };
+		844D712A276B946B00A33BB5 /* EPICImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EPICImageViewModel.swift; sourceTree = "<group>"; };
 		84A28E2A276A33C7009D5EDC /* ImageAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageAssembler.swift; sourceTree = "<group>"; };
 		84C7CCF12769E06200868B08 /* HTTPService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPService.swift; sourceTree = "<group>"; };
 		84C7CCF62769E0A000868B08 /* AstronomyPictureService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomyPictureService.swift; sourceTree = "<group>"; };
@@ -172,6 +198,9 @@
 		844813E12768D657009B0D8A /* ShowImageFromEpicAPI */ = {
 			isa = PBXGroup;
 			children = (
+				844D7111276B636800A33BB5 /* ViewModel */,
+				844D7110276B636300A33BB5 /* Model */,
+				844D710F276B635800A33BB5 /* Service */,
 				844813E52768DC36009B0D8A /* View */,
 			);
 			path = ShowImageFromEpicAPI;
@@ -234,6 +263,38 @@
 				844D7105276B38B900A33BB5 /* EarthImageService.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		844D710F276B635800A33BB5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				844D7114276B744200A33BB5 /* EpicImageService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		844D7110276B636300A33BB5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				844D7112276B73B500A33BB5 /* DateResponseResource.swift */,
+				844D7118276B74E400A33BB5 /* AvailableDate.swift */,
+				844D711A276B795C00A33BB5 /* EPICImageResponseResource.swift */,
+				844D711C276B79C900A33BB5 /* LocationResponseResource.swift */,
+				844D711E276B79D200A33BB5 /* PositionResponseResource.swift */,
+				844D7120276B7B9800A33BB5 /* CoordinateResponseResource.swift */,
+				844D7122276B7BF800A33BB5 /* AttitudeResponseResource.swift */,
+				844D7124276B87BB00A33BB5 /* EPICImage.swift */,
+				844D7128276B8E8500A33BB5 /* EPICImageRequestResource.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		844D7111276B636800A33BB5 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				844D712A276B946B00A33BB5 /* EPICImageViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		84C7CCEE2769E03E00868B08 /* Shared */ = {
@@ -313,6 +374,8 @@
 				84C7CD0F2769FD2E00868B08 /* AstronomyPictureAssembler.swift */,
 				84A28E2A276A33C7009D5EDC /* ImageAssembler.swift */,
 				844D7109276B3BD700A33BB5 /* EarthImageAssembler.swift */,
+				844D7116276B748900A33BB5 /* DateAssembler.swift */,
+				844D7126276B87E200A33BB5 /* EPICImageAssembler.swift */,
 			);
 			path = Assembler;
 			sourceTree = "<group>";
@@ -427,29 +490,42 @@
 			buildActionMask = 2147483647;
 			files = (
 				844D710E276B3FD800A33BB5 /* EarthImageView.swift in Sources */,
+				844D712B276B946B00A33BB5 /* EPICImageViewModel.swift in Sources */,
 				844813E42768DA37009B0D8A /* TabBarController.swift in Sources */,
 				84C7CD092769EEB900868B08 /* NetworkError.swift in Sources */,
+				844D711B276B795C00A33BB5 /* EPICImageResponseResource.swift in Sources */,
+				844D7123276B7BF800A33BB5 /* AttitudeResponseResource.swift in Sources */,
 				844D7108276B3A2500A33BB5 /* EarthImage.swift in Sources */,
 				84C7CCF72769E0A000868B08 /* AstronomyPictureService.swift in Sources */,
 				84C7CCF92769E0BB00868B08 /* AstronomyPictureResponseResource.swift in Sources */,
+				844D7117276B748900A33BB5 /* DateAssembler.swift in Sources */,
 				84A28E2B276A33C7009D5EDC /* ImageAssembler.swift in Sources */,
 				84C7CD052769EC6000868B08 /* Endpoint.swift in Sources */,
 				844813EF2768DD32009B0D8A /* EpicAPIImageController.swift in Sources */,
 				84C7CCFB2769E0D300868B08 /* AstronomyPictureViewModel.swift in Sources */,
+				844D7115276B744200A33BB5 /* EpicImageService.swift in Sources */,
 				844813ED2768DD08009B0D8A /* EarthImageController.swift in Sources */,
 				844813C22768C824009B0D8A /* ViewController.swift in Sources */,
 				84C7CD0D2769FCBF00868B08 /* AstronomyPicture.swift in Sources */,
 				844813EB2768DCD7009B0D8A /* AstronomyPictureController.swift in Sources */,
+				844D7113276B73B500A33BB5 /* DateResponseResource.swift in Sources */,
+				844D7129276B8E8500A33BB5 /* EPICImageRequestResource.swift in Sources */,
 				844D710A276B3BD700A33BB5 /* EarthImageAssembler.swift in Sources */,
 				84C7CD0B2769FA7D00868B08 /* ImageLoader.swift in Sources */,
 				84C7CD102769FD2E00868B08 /* AstronomyPictureAssembler.swift in Sources */,
 				844D7102276B350800A33BB5 /* LocationRequestResource.swift in Sources */,
 				84C7CCFF2769E2E000868B08 /* AstronomyPictureCell.swift in Sources */,
 				84C7CCF22769E06200868B08 /* HTTPService.swift in Sources */,
+				844D7127276B87E200A33BB5 /* EPICImageAssembler.swift in Sources */,
 				844D7106276B38B900A33BB5 /* EarthImageService.swift in Sources */,
 				84C7CD13276A1B3400868B08 /* TextField.swift in Sources */,
 				844813C02768C824009B0D8A /* AppDelegate.swift in Sources */,
+				844D7121276B7B9800A33BB5 /* CoordinateResponseResource.swift in Sources */,
+				844D7119276B74E400A33BB5 /* AvailableDate.swift in Sources */,
+				844D711D276B79C900A33BB5 /* LocationResponseResource.swift in Sources */,
+				844D7125276B87BB00A33BB5 /* EPICImage.swift in Sources */,
 				84C7CD012769E41E00868B08 /* DatePickerCell.swift in Sources */,
+				844D711F276B79D200A33BB5 /* PositionResponseResource.swift in Sources */,
 				844D710C276B3D4100A33BB5 /* EarthImageViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

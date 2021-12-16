@@ -43,10 +43,6 @@ class EarthImageViewModel: NSObject, EarthImageViewModelProtocol {
     }
     
     private func configureRequestResource(coordinate: CLLocationCoordinate2D) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        let formattedDate = dateFormatter.string(from: Date())
-        
         requestResource = LocationRequestResource(longitude: String(coordinate.longitude),
                                                   latitude: String(coordinate.latitude),
                                                   date: "2019-07-05")

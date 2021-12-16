@@ -55,4 +55,30 @@ class ImageLoader: ImageLoaderProtocol {
             }
         }.resume()
     }
+    
+    func loadEPICImage(requestResource: EPICImageRequestResource, completion: @escaping (Data?, NetworkError?) -> Void) {
+        let endpoint = Endpoint.mostRecentImage(year: requestResource.year,
+                                                month: requestResource.month,
+                                                day: requestResource.day,
+                                                imageType: requestResource.type,
+                                                imageName: requestResource.imageName,
+                                                apiKey: "he4ZKTcfjgpo2iOvgQpAAb5MoR8r3ZnGtoRHe8ds")
+        
+        guard let url = endpoint.url else { return }
+        print(url)
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            if let data = data,
+                let httpResponse = response as? HTTPURLResponse,
+                (200..<300).contains(httpResponse.statusCode),
+                error == nil {
+                DispatchQueue.main.async {
+                    completion(data, nil)
+                }
+            } else {
+                DispatchQueue.main.async {
+                    completion(nil, .connectionFailed)
+                }
+            }
+        }.resume()
+    }
 }
