@@ -14,6 +14,7 @@ class EPICImageCell: UITableViewCell {
     
     lazy var epicImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()

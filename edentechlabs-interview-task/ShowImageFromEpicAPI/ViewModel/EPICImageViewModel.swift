@@ -65,7 +65,7 @@ class EPICImageViewModel: EPICImageViewModelProtocol {
         let month = dateAssembler.getDateComponent(component: "month", from: imageInformation.date)
         let day = dateAssembler.getDateComponent(component: "day", from: imageInformation.date)
         
-        displayModel.date = "\(year)-\(month)-\(day)"
+        displayModel.date = self.dateAssembler.convertDateToUserFriendlyFormat("\(year)-\(month)-\(day)")
         
         let requestResource = EPICImageRequestResource(year: year,
                                                        month: month,
@@ -93,6 +93,7 @@ class EPICImageViewModel: EPICImageViewModelProtocol {
                 let uniqueDates = result.uniqued()
                 let dates = uniqueDates.map() { "\($0.year)-\($0.month)-\($0.day)" }
                 self.displayModel.dates = dates
+                self.displayModel.date = self.dateAssembler.convertDateToUserFriendlyFormat(dates[0])
                 self.delegate?.updateDisplayModel(self.displayModel)
                 self.startLoadingImageWithDate(dates[0])
             } 

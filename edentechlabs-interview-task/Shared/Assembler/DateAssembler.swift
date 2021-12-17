@@ -12,6 +12,7 @@ protocol DateAssemblerProtocol: AnyObject {
     func convertToDateModel(from dateResponseResource: DateResponseResource) -> AvailableDate
     func convertToDateModel(from date: String) -> AvailableDate
     func getDateComponent(component: String, from date: Date) -> String
+    func convertDateToUserFriendlyFormat(_ date: String) -> String
 }
 
 class DateAssembler: DateAssemblerProtocol {
@@ -42,5 +43,19 @@ class DateAssembler: DateAssemblerProtocol {
         default:
             return ""
         }
+    }
+    
+    func convertDateToUserFriendlyFormat(_ date: String) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        
+        let date = dateFormatter.date(from: date)
+        if let date = date {
+            dateFormatter.dateFormat = "MMM d, yyyy"
+            let stringDate = dateFormatter.string(from: date)
+            return stringDate
+        }
+        
+        return ""
     }
 }

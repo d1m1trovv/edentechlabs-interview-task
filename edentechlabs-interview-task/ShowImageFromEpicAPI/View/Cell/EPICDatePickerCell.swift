@@ -21,7 +21,7 @@ class EPICDatePickerCell: UITableViewCell {
     lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .title2)
-        label.text = "Date: "
+        label.text = "Pick date: "
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -46,12 +46,20 @@ class EPICDatePickerCell: UITableViewCell {
         return datePicker
     }()
     
+    lazy var arrowImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
+    }()
+    
     lazy var stackView = UIStackView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureView()
         configureDatePicker()
+        configureTextField()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -97,5 +105,13 @@ class EPICDatePickerCell: UITableViewCell {
         
         dateTextField.inputAccessoryView = toolbar
         dateTextField.inputView = datePicker
+    }
+    
+    private func configureTextField() {
+        if let image = UIImage(named: "expand-arrow") {
+            arrowImageView.image = image
+            dateTextField.rightViewMode = .always
+            dateTextField.rightView = arrowImageView
+        }
     }
 }

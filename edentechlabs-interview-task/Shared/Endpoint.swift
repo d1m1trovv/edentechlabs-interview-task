@@ -65,7 +65,7 @@ extension Endpoint {
                                 imageType: String,
                                 imageName: String,
                                 apiKey: String) -> Endpoint {
-        return Endpoint(path: "/EPIC/api/natural/\(year)/\(month)/\(day)/\(imageType)/\(imageName)",
+        return Endpoint(path: "/EPIC/archive/enhanced/\(year)/\(month)/\(day)/\(imageType)/\(imageName).jpg",
                         queryItems: [
                             URLQueryItem(name: "api_key", value: apiKey)
             ])

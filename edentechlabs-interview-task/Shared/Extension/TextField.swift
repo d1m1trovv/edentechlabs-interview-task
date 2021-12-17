@@ -24,4 +24,8 @@ class TextField: UITextField {
     override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         return bounds.inset(by: padding)
     }
+    
+    override func rightViewRect(forBounds bounds: CGRect) -> CGRect {
+        return bounds.inset(by: UIEdgeInsets(top: 10, left: bounds.size.width - bounds.size.height, bottom: 10, right: 5))
+    }
 }

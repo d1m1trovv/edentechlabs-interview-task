@@ -14,6 +14,7 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
+        selectedIndex = 0
     }
     
     func appendNavigationController(_ rootController: UIViewController,
@@ -29,6 +30,10 @@ class TabBarController: UITabBarController, UITabBarControllerDelegate {
         return navigationController
     }
 
+    func tabBarController(_ tabBarController: UITabBarController, shouldSelect viewController: UIViewController) -> Bool {
+        return true
+    }
+    
     func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
         let navController = viewController as? UINavigationController
         navController?.popToRootViewController(animated: true)

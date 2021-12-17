@@ -18,6 +18,6 @@ class EPICImageAssembler: EPICImageAssemblerProtocol {
         dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
         return EPICImage(name: epicImageResponseResource.imageName,
                          date: dateFormatter.date(from: epicImageResponseResource.date)!,
-                         type: "png")
+                         type: "jpg")
     }
 }

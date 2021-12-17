@@ -17,7 +17,6 @@ protocol AstronomyPictureViewModelDelegate: AnyObject {
 
 protocol AstronomyPictureViewModelProtocol: AnyObject {
     func viewLoaded()
-    func cellIsBeingConfigured()
     func doneButtonIsClicked(_ date: Date?)
     var delegate: AstronomyPictureViewModelDelegate? { get set }
 }
@@ -26,6 +25,7 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
     private let astronomyPictureService: AstronomyPictureServiceProtocol
     private let imageLoader: ImageLoaderProtocol
     private let imageAssembler: ImageAssemblerProtocol
+    private let dateAssembler: DateAssemblerProtocol
     
     weak var delegate: AstronomyPictureViewModelDelegate?
     var astronomyPictureModel: AstronomyPicture?
@@ -34,10 +34,12 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
     
     init(astronomyPictureService: AstronomyPictureServiceProtocol = AstronomyPictureService(),
          imageLoader: ImageLoaderProtocol = ImageLoader(),
-         imageAssembler: ImageAssemblerProtocol = ImageAssembler()) {
+         imageAssembler: ImageAssemblerProtocol = ImageAssembler(),
+         dateAssembler: DateAssemblerProtocol = DateAssembler()) {
         self.astronomyPictureService = astronomyPictureService
         self.imageLoader = imageLoader
         self.imageAssembler = imageAssembler
+        self.dateAssembler = dateAssembler
     }
     
     func viewLoaded() {
@@ -48,10 +50,6 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
         if let date = date {
             loadAstronomyPictureData(date)
         }
-    }
-    
-    func cellIsBeingConfigured() {
-       //
     }
     
     private func loadAstronomyPictureData(_ date: Date) {
@@ -67,7 +65,7 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
                 self.astronomyPictureModel = result
                 if let astronomyPictureModel = self.astronomyPictureModel {
                     self.astronomyPictureDisplayModel.title = astronomyPictureModel.title
-                    self.astronomyPictureDisplayModel.date = self.convertDateToUserFriendlyFormat(astronomyPictureModel.date)
+                    self.astronomyPictureDisplayModel.date = self.dateAssembler.convertDateToUserFriendlyFormat(astronomyPictureModel.date)
                     self.delegate?.updateDisplayModel(self.astronomyPictureDisplayModel)
                     print(Thread.isMainThread)
                     self.delegate?.reloadData()
@@ -93,19 +91,5 @@ class AstronomyPictureViewModel: AstronomyPictureViewModelProtocol {
                 }
             }
         }
-    }
-    
-    private func convertDateToUserFriendlyFormat(_ date: String) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd"
-        
-        let date = dateFormatter.date(from: date)
-        if let date = date {
-            dateFormatter.dateFormat = "MMM d, yyyy"
-            let stringDate = dateFormatter.string(from: date)
-            return stringDate
-        }
-        
-        return ""
     }
 }
